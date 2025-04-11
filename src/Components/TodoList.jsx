@@ -32,7 +32,16 @@ const TodoList = () => {
           <button className="add-list-button">Add Heading</button>
         </div>
       </div>
+      
       <div className="todo_main">
+        {todos.map((todo, indix) =>(
+          <div key={indix} className='todo-card'>
+            <div className='heading_todo'>
+              <h3>{todo.heading}</h3> {/*Display the heading here*/}
+              <button className='delet-button-heading' onClick={() => heandleDeleteTodo(indix)}>Delete Heading</button>
+            </div>
+          </div>
+        ))}
         
       </div>
     </>
