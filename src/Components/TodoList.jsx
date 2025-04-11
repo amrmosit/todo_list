@@ -24,6 +24,12 @@ const TodoList = () => {
     setListInputs({...listInputs, [index]:value});
   };
 
+  const handleDeleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
 
 
   return (
@@ -50,7 +56,7 @@ const TodoList = () => {
           <div key={index} className='todo-card'>
             <div className='heading_todo'>
               <h3>{todo.heading}</h3> {/*Display the heading here*/}
-              <button className='delet-button-heading' onClick={() => heandleDeleteTodo(indix)}>Delete Heading</button>
+              <button className='delet-button-heading' onClick={() => handleDeleteTodo(index)}>Delete Heading</button>
             </div>
             <div className='add_list'>
               <input
